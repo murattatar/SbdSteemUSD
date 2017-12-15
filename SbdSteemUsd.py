@@ -9,7 +9,7 @@ import os
 import requests
 import re
 
-def Arasi(bas,son,cumle):
+def Between(bas,son,cumle):
     b1 = cumle.split(bas)
     b2 = b1[1].split(son)
     ar = b2[0]
@@ -51,12 +51,12 @@ gelen = getir.content
 
 
 
-sbd1 = Arasi('STEEM DOLLARS','UserWallet',gelen)
-sbd  = Arasi('-->$','<!--',sbd1)
+sbd1 = Between('STEEM DOLLARS','UserWallet',gelen)
+sbd  = Between('-->$','<!--',sbd1)
 
 
-steem1 = Arasi('can be converted to','UserWallet',gelen); 
-steem = Arasi('-->',' STEEM<!',steem1)
+steem1 = Between('can be converted to','UserWallet',gelen); 
+steem = Between('-->',' STEEM<!',steem1)
 
 sbd = float(sbd)
 steem = float(steem)
@@ -67,7 +67,7 @@ print sbd
 
 
 
-## BitTrex SBD / Steem from CoinMarketCap #########################################
+## BitTrex SBD / Steem #########################################
 
 
 url = "https://coinmarketcap.com/currencies/steem/#markets"
@@ -75,9 +75,9 @@ getir = requests.get(url)
 gelen = getir.content
 
 
-bitSteem1 = Arasi('Bittrex','Recently',gelen); 
-bitSteem2 = Arasi('price','</td>',bitSteem1); 
-bitSteem  = Arasi('$','</span>',bitSteem2)
+bitSteem1 = Between('Bittrex','Recently',gelen); 
+bitSteem2 = Between('price','</td>',bitSteem1); 
+bitSteem  = Between('$','</span>',bitSteem2)
 
 
 
@@ -87,9 +87,9 @@ getir = requests.get(url)
 gelen = getir.content
 
 
-bitSbd1 = Arasi('Bittrex','Recently',gelen); 
-bitSbd2  = Arasi('price','</td>',bitSbd1)
-bitSbd   = Arasi('$','</span>',bitSbd2)
+bitSbd1 = Between('Bittrex','Recently',gelen); 
+bitSbd2  = Between('price','</td>',bitSbd1)
+bitSbd   = Between('$','</span>',bitSbd2)
 
 
 bitSbd = float(bitSbd)
