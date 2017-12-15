@@ -46,16 +46,16 @@ size = unicode(str(size))
 ## Steemit Wallet #########################################
 
 url = "https://steemit.com/@"+username+"/transfers"
-getir = requests.get(url)
-gelen = getir.content
+bring = requests.get(url)
+arrival = bring.content
 
 
 
-sbd1 = Between('STEEM DOLLARS','UserWallet',gelen)
+sbd1 = Between('STEEM DOLLARS','UserWallet',arrival)
 sbd  = Between('-->$','<!--',sbd1)
 
 
-steem1 = Between('can be converted to','UserWallet',gelen); 
+steem1 = Between('can be converted to','UserWallet',arrival); 
 steem = Between('-->',' STEEM<!',steem1)
 
 sbd = float(sbd)
@@ -71,11 +71,11 @@ print sbd
 
 
 url = "https://coinmarketcap.com/currencies/steem/#markets"
-getir = requests.get(url)
-gelen = getir.content
+bring = requests.get(url)
+arrival = bring.content
 
 
-bitSteem1 = Between('Bittrex','Recently',gelen); 
+bitSteem1 = Between('Bittrex','Recently',arrival); 
 bitSteem2 = Between('price','</td>',bitSteem1); 
 bitSteem  = Between('$','</span>',bitSteem2)
 
@@ -83,11 +83,11 @@ bitSteem  = Between('$','</span>',bitSteem2)
 
 
 url = "https://coinmarketcap.com/currencies/steem-dollars/#markets"
-getir = requests.get(url)
-gelen = getir.content
+bring = requests.get(url)
+arrival = bring.content
 
 
-bitSbd1 = Between('Bittrex','Recently',gelen); 
+bitSbd1 = Between('Bittrex','Recently',arrival); 
 bitSbd2  = Between('price','</td>',bitSbd1)
 bitSbd   = Between('$','</span>',bitSbd2)
 
@@ -363,7 +363,6 @@ Total in USD
 
 
 o = open("SbdSteemUsd.html","w"); o.write(html.encode("utf-8")); o.close()
-os.startfile("SbdSteemUsd.html")
 
 
 
