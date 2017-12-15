@@ -1,7 +1,7 @@
 
-# SBDs and STEEMs total value in USD
+# SbdSteemUSD
 
-You can easily to see your SBDs and STEEMs total value in USD
+#### You can easily to see your SBDs and STEEMs total value in USD
 
 #### Setup
 
