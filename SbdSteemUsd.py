@@ -15,9 +15,6 @@ def Arasi(bas,son,cumle):
     ar = b2[0]
     return ar
 
-def e():
-    exit()
-
 
 username = raw_input(u"User Name: ")
 
@@ -70,7 +67,7 @@ print sbd
 
 
 
-## BitTrex SBD / Steem #########################################
+## BitTrex SBD / Steem from CoinMarketCap #########################################
 
 
 url = "https://coinmarketcap.com/currencies/steem/#markets"
